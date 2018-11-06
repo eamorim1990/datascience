@@ -14,3 +14,24 @@ print(ww2_cas['EUA'])
 print(ww2_cas[ww2_cas > 4000000])
 
 print('URSS' in ww2_cas)
+
+ww2_dict = ww2_cas.to_dict()
+print(ww2_dict)
+
+ww2_series = Series(ww2_dict)
+print(ww2_series)
+
+countries = ['China','Germany','Japan','EUA','URSS','Argentina']
+
+obj2 = pd.Series(ww2_dict, index=countries)
+print(obj2)
+
+print(pd.isnull(obj2))
+print(pd.notnull(obj2))
+
+print(ww2_series+obj2)
+
+obj2.name = 'Vítimas 2ª Guerra Mundial'
+obj2.index.name= 'Países'
+
+print(obj2)
